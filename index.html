@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task16</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .headparent {
+            height: 600px;
+            background-color: rgb(244, 237, 237);
+        }
+
+        .head {
+            width: 60%;
+            margin: auto;
+            height: 100%;
+        }
+
+        .nav_bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 10%;
+        }
+
+        .spicy {
+            color: darkred;
+            width: 25%;
+        }
+
+        .nav {
+            width: 50%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .call {
+            width: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav_link {
+            text-decoration: none;
+            font-size: 12px;
+            color: orange;
+        }
+
+        .call_us {
+            color: orange;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90%;
+        }
+
+        .healthy {
+            width: 50%;
+            color: darkred;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding-bottom: 25px;
+
+        }
+
+        .input_box {
+            width: 50%;
+        }
+
+        .healthy_para {
+            font-size: 75px;
+        }
+
+        .healthy_button {
+            width: 130px;
+            height: 40px;
+            background-color: black;
+            color: white;
+            border: none;
+        }
+
+        .input_button {
+            border-radius: 20px;
+        }
+
+        .input_box {
+            height: 100%;
+            border-top: 15px solid rgb(255, 149, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(68, 22, 22);
+            border-radius: 15px;
+            padding-bottom: 25px;
+        }
+
+        .form {
+            width: 90%;
+            height: 95%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        ::placeholder {
+            color: white;
+        }
+
+        .input {
+            background-color: rgb(68, 22, 22);
+            width: 95%;
+            border: none;
+            border-bottom: 1px solid white;
+            padding: 15px;
+        }
+
+        .food {
+            display: flex;
+            padding: 30px 0px;
+            height: 650px;
+        }
+
+        .food_main {
+            width: 60%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .food_center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .food_about {
+            text-align: center;
+            padding: 30px 0px;
+        }
+
+        .boxes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .food_box {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+
+        .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 50px;
+        }
+
+        .text {
+            background-color: rgb(69, 5, 5);
+            height: 100%;
+            padding-top: 50px;
+            width: 95%;
+        }
+
+        .text_center {
+            text-align: center;
+            padding: 10px 15px;
+            line-height: 25px;
+            color: white;
+        }
+
+        .pakge {
+            font-size: 40px;
+        }
+
+        .step {
+            height: 400px;
+        }
+
+        .step_child {
+            margin: auto;
+            width: 60%;
+            height: 100%;
+        }
+
+        .step_head {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 30%;
+        }
+
+        .step_heading_h1 {
+            font-size: 35px;
+        }
+
+        .step_heading_h5 {
+            font-size: 15px;
+            color: grey;
+
+        }
+
+        .step_boxes {
+            display: flex;
+            height: 100%;
+        }
+
+        .step_box {
+            height: 100%;
+        }
+
+        .step_box_child {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .step_circle {
+            background-color: darkred;
+            color: white;
+            height: 60px;
+            width: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 30px;
+            position: relative;
+            top: 30px;
+        }
+
+        .step_text {
+            background-color: rgb(255, 166, 0);
+            width: 90%;
+            padding: 30px;
+            border-radius: 0px 30px 0px 30px;
+            text-align: center;
+            color: white;
+            line-height: 30px;
+        }
+
+        .salad {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 650px;
+            margin-top: 50px;
+            background-color: darkred;
+        }
+
+        .salad-text {
+            padding-left: 140px;
+            height: 60%;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .salad-image {
+            width: 50%;
+            position: relative;
+            top: 20px;
+        }
+
+        .salad_pic_text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .salad_pic {
+            position: relative;
+            top: 70px;
+            border-radius: 150px;
+        }
+
+        .salad_pic_box {
+            background-color: white;
+            padding: 80px 30px 0px 30px;
+            text-align: center;
+        }
+
+        .client {
+            font-size: 40px;
+        }
+
+        .mark {
+            color: rgb(255, 162, 0);
+            padding: 10px 0px;
+            font-size: 18px;
+        }
+
+        .salad_circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle {
+            height: 16px;
+            width: 16px;
+            border-radius: 8px;
+            margin: 15px 5px;
+        }
+
+        .circle_one {
+            background-color: yellow;
+        }
+
+        .circle_two {
+            background-color: white;
+
+        }
+        .last{
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .last_child{
+            width: 40%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .last_heading{
+            font-size: 35px;
+            text-align: center;
+        }
+        .last_para{
+            color: rgb(255, 162, 0);
+
+        }
+        .footer{
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: darkred;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="headparent">
+            <header class="head">
+                <nav class="nav_bar">
+                    <div class="spicy">
+                        <h2 class="para"><b>Spicy</b></h2>
+                    </div>
+                    <div class="nav">
+                        <a class="nav_link" href="">ABOUT</a>
+                        <a class="nav_link" href="">SCREENSHOT</a>
+                        <a class="nav_link" href="">CONTACT</a>
+                    </div>
+                    <div class="call">
+                        <h3 class="call_us">Call Us:</h3><span>12345677890</span>
+                    </div>
+                </nav>
+                <section class="header">
+                    <div class="healthy">
+                        <h1 class="healthy_para">Healthy Food Recipes</h1>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque ullam praesentium
+                            debitis dolor tempore quae expedita unde, veniam inventore aliquid.</p>
+                        <button class="healthy_button">Read More</button>
+
+                    </div>
+                    <div class="input_box">
+                        <form action="" class="form">
+                            <input class="input" type="text" placeholder="Name"><br>
+                            <input class="input" type="email" placeholder="Email"><br>
+                            <input class="input" type="number" placeholder="Phone Number"><br>
+                            <input class="input" type="text" placeholder="Message"><br>
+                            <button class=" healthy_button input_button">SEND</button>
+                        </form>
+                    </div>
+                </section>
+            </header>
+
+        </div>
+        <section class="food">
+            <div class="food_main">
+                <div class="food_child">
+                    <div class="food_heading food_center">
+                        <h1 class="pakge"><span style="color: rgb(255, 196, 0);">Food</span> <span
+                                style="color: darkred;">Packages</span></h1>
+                    </div>
+                    <div class="food_about food_center">
+                        <b>
+                            There are many variations of passages of Lorem Ipsum available, but the majorityomised words
+                            which don't look even slightly believable
+                        </b>
+                    </div>
+                </div>
+                <div class="boxes">
+                    <div class="food_box food_center">
+                        <img class="image" src="pack3.png" alt="" width="150px" height="150px">
+                        <div class="text">
+                            <h3 class="text_center">HomeMade</h3>
+                            <p class="text_center">
+                                There are many variations of passages of Lorem Ipsum available, but the majority have
+                                suffered alteration in some form, by injected humour, or randomised words which don't
+                                look even slightly believable
+                            </p>
+                        </div>
+                    </div>
+                    <div class="food_box food_center">
+                        <img class="image" src="pack2.png" alt="" width="150px" height="150px">
+                        <div class="text">
+                            <h3 class="text_center">Noodles</h3>
+                            <p class="text_center">
+                                There are many variations of passages of Lorem Ipsum available, but the majority have
+                                suffered alteration in some form, by injected humour, or randomised words which don't
+                                look even slightly believable
+                            </p>
+                        </div>
+                    </div>
+                    <div class="food_box food_center">
+                        <img class="image" src="pack1.png" alt="" width="150px" height="150px">
+                        <div class="text">
+                            <h3 class="text_center">Egg</h3>
+                            <p class="text_center">
+                                There are many variations of passages of Lorem Ipsum available, but the majority have
+                                suffered alteration in some form, by injected humour, or randomised words which don't
+                                look even slightly believable
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <section class="step">
+            <div class="step_child">
+                <div class="step_head">
+                    <h5 class="step_heading_h5">How it Works</h5>
+                    <h1 class="step_heading_h1"><span style="color: rgb(255, 204, 0);">3 Step for</span> <span
+                            style="color: darkred;">Healthy Eating</span></h1>
+                </div>
+                <div class="step_boxes">
+                    <div class="step_box">
+                        <div class="step_circle">
+                            <p class="step_circle_para"><b>01</b></p>
+                        </div>
+                        <div class="step_box_child">
+
+                            <div class="step_text">
+                                <p class="step_para">
+                                    There are many variations of passages of Lorem Ipsum available, but the
+                                    majorityomised words
+                                    which don't look even slightly believable.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step_box">
+                        <div class="step_circle">
+                            <p class="step_circle_para"><b>02</b></p>
+                        </div>
+                        <div class="step_box_child">
+
+                            <div class="step_text">
+                                <p class="step_para">
+
+                                    There are many variations of passages of Lorem Ipsum available, but the
+                                    majorityomised words
+                                    which don't look even slightly believable.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step_box">
+                        <div class="step_circle">
+                            <p class="step_circle_para"><b>03</b></p>
+                        </div>
+                        <div class="step_box_child">
+                            <div class="step_text">
+                                <p class="step_para">
+
+                                    There are many variations of passages of Lorem Ipsum available, but the
+                                    majorityomised words
+                                    which don't look even slightly believable
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="salad">
+            <div class="salad-text">
+                <h1 class="client"><span style="color: rgb(255, 162, 0);">Clients</span> <span
+                        style="color: white;">says</span></h1>
+                <div class="salad_pic_text">
+                    <img src="icon2.png" alt="" width="150px" height="150px" class="salad_pic">
+                    <div class="salad_pic_box">
+                        <h4 class="mark">MARK DU</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit, magni doloremque fugiat
+                            quaerat quisquam voluptate. Maxime reiciendis nisi mollitia, tempora non laborum expedita,
+                            magnam quae iusto cum veniam consequatur soluta?</p>
+                        <img src="icon1.png" alt="" width="150px" height="80px">
+                    </div>
+                </div>
+                <div class="salad_circle">
+                    <div class="circle circle_one">
+
+                    </div>
+                    <div class="circle circle_two">
+
+                    </div>
+                    <div class="circle circle_one">
+
+                    </div>
+                </div>
+            </div>
+            <div class="salad_image">
+                <img src="salad.png" alt="" width="500px" height="500px">
+            </div>
+
+        </section>
+        <section class="last">
+            <div class="last_child">
+                <h1 class="last_heading">Free Multipurpose <br> Responsive Landing Page 2019</h1>
+                <p class="last_para"><b>Modern Lighting Fast and easily Customizeable</b></p>
+                <button class=" healthy_button input_button">Get a Qoute</button>
+            </div>
+        </section>
+        <footer class="footer">
+            <p class="footer_para">
+                <b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque!</b>
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>
